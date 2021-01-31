@@ -364,10 +364,19 @@
         .section {
             height: 175vh;
         }
-        .accueil {
-            padding: 20px;
+        .s2 {
+            background: url("ressources/jardin-vert-mobile.jpg") no-repeat 0 0;
+        }
+        .s3 {
+            background: url("ressources/jardin-noir-mobile.jpg") no-repeat 0 0;
         }
         .s4 {
             background: url("ressources/jardin-blanc-mobile.jpg") no-repeat 0 0;
+        }
+        .s5 {
+            background: url("ressources/jardin-vert-noir-mobile.jpg") no-repeat 0 0;
+        }
+        .s6 {
+            background: url("ressources/jardin-noir-vert-mobile.jpg") no-repeat 0 0;
         }
     }
