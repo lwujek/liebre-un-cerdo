@@ -221,35 +221,35 @@
     .s2 {
         background: url("ressources/jardin-vert.jpg") no-repeat 0 0;
         background-position: center center;
-        background-size: contain;
+        background-size: cover;
         background-attachment: fixed;
     }
     
     .s3 {
         background: url("ressources/jardin-noir1.jpg") no-repeat 0 0;
         background-position: center center;
-        background-size: contain;
+        background-size: cover;
         background-attachment: fixed;
     }
     
     .s4 {
         background: url("ressources/jardin-blanc.jpg") no-repeat 0 0;
         background-position: center center;
-        background-size: contain;
+        background-size: cover;
         background-attachment: fixed;
     }
     
     .s5 {
         background: url("ressources/jardin-vert-noir.jpg") no-repeat 0 0;
         background-position: center center;
-        background-size: contain;
+        background-size: cover;
         background-attachment: fixed;
     }
     
     .s6 {
         background: url("ressources/jardin-noir-vert.jpg") no-repeat 0 0;
         background-position: center center;
-        background-size: contain;
+        background-size: cover;
         background-attachment: fixed;
     }
     
@@ -363,5 +363,11 @@
     @media screen and (max-width:500px) {
         .section {
             height: 175vh;
+        }
+        .accueil {
+            padding: 20px;
+        }
+        .s4 {
+            background: url("ressources/jardin-blanc-mobile.jpg") no-repeat 0 0;
         }
     }
