@@ -221,56 +221,36 @@
     .s2 {
         background: url("ressources/jardin-vert.jpg") no-repeat 0 0;
         background-position: center center;
-        background-size: cover;
+        background-size: contain;
         background-attachment: fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
     }
     
     .s3 {
         background: url("ressources/jardin-noir1.jpg") no-repeat 0 0;
         background-position: center center;
-        background-size: cover;
+        background-size: contain;
         background-attachment: fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
     }
     
     .s4 {
         background: url("ressources/jardin-blanc.jpg") no-repeat 0 0;
         background-position: center center;
-        background-size: cover;
+        background-size: contain;
         background-attachment: fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
     }
     
     .s5 {
         background: url("ressources/jardin-vert-noir.jpg") no-repeat 0 0;
         background-position: center center;
-        background-size: cover;
+        background-size: contain;
         background-attachment: fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
     }
     
     .s6 {
         background: url("ressources/jardin-noir-vert.jpg") no-repeat 0 0;
         background-position: center center;
-        background-size: cover;
+        background-size: contain;
         background-attachment: fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
     }
     
     .blocTxt {
@@ -380,7 +360,7 @@
         }
     }
     
-    @media screen and (max-width:400px) {
+    @media screen and (max-width:500px) {
         .section {
             height: 175vh;
         }
