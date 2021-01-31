@@ -1,388 +1,399 @@
-    @font-face {
-        font-family: SegoeUI;
-        src: local("Segoe UI Light"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
-        font-weight: 100;
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI Light"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI Semilight"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf) format("truetype");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI Bold"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI Semibold"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf) format("truetype");
+    font-weight: 700;
+}
+
+html {
+    font-family: SegoeUI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    height: 250px;
+    width: 250px;
+}
+
+.navigationCheckbox {
+    display: none;
+}
+
+.dorada {
+    color: rgb(212, 177, 101);
+}
+
+.navigationBg {
+    margin-top: 20px;
+    height: 96px;
+    width: 96px;
+    border-radius: 50%;
+    position: fixed;
+    top: 72px;
+    right: 104px;
+    background-image: radial-gradient(#00cc33, #57855f);
+    z-index: 1000;
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.navigationBtn {
+    margin-top: 20px;
+    background-color: #fff;
+    height: 112px;
+    width: 112px;
+    position: fixed;
+    top: 64px;
+    right: 96px;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* trait du milieu */
+
+.navigationIcon {
+    position: relative;
+    margin-top: 56px;
+    width: 48px;
+    height: 2px;
+    background: #5f5785;
+    display: inline-block;
+}
+
+
+/* deux autres traits */
+
+.navigationIcon::before,
+.navigationIcon::after {
+    width: 48px;
+    height: 2px;
+    background-color: #5f5785;
+    content: '';
+    position: absolute;
+    left: 0;
+    transition: all 0.2s;
+}
+
+.navigationIcon::before {
+    top: -12.8px;
+}
+
+.navigationIcon::after {
+    top: 12.8px;
+}
+
+
+/* navigation et liste */
+
+.nav {
+    height: 100vh;
+    position: fixed;
+    width: 0;
+    opacity: 0;
+    z-index: 1500;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navigationListe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style-type: none;
+    text-align: center;
+    width: 100%;
+}
+
+.liens {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 48px;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+}
+
+.liens:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.ours {
+    color: white;
+}
+
+
+/* les animations */
+
+.navigationCheckbox:checked~.navigationBg {
+    transform: scale(80);
+}
+
+.navigationCheckbox:checked~.nav {
+    opacity: 1;
+    width: 100%;
+}
+
+.navigationCheckbox:checked+.navigationBtn .navigationIcon {
+    background-color: transparent;
+}
+
+.navigationCheckbox:checked+.navigationBtn .navigationIcon::before {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.navigationCheckbox:checked+.navigationBtn .navigationIcon::after {
+    top: 0;
+    transform: rotate(-135deg);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.accueil {
+    height: 100%;
+    width: 100%;
+    background-color: white background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+
+h1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    text-align: center;
+    color: rgb(24, 23, 23);
+    width: 100%;
+}
+
+h2 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    text-align: center;
+    color: rgb(24, 23, 23);
+    width: 100%;
+}
+
+.section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.s1 {
+    background-color: white;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.s2 {
+    background: url("ressources/jardin-vert.jpg") no-repeat 0 0;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.s3 {
+    background: url("ressources/jardin-noir1.jpg") no-repeat 0 0;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.s4 {
+    background: url("ressources/jardin-blanc.jpg") no-repeat 0 0;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.s5 {
+    background: url("ressources/jardin-vert-noir.jpg") no-repeat 0 0;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.s6 {
+    background: url("ressources/jardin-noir-vert.jpg") no-repeat 0 0;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.blocTxt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+
+.ours {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background: rgba(255, 255, 255, 0.8);
+    border-style: dotted;
+    border-color: black;
+    padding: 20px;
+    color: black;
+}
+
+.sousTitreTxt {
+    font-size: 45px;
+    text-align: center;
+}
+
+.txt {
+    font-size: 18px;
+    padding: 10px 40px;
+}
+
+.iconify {
+    width: 36px;
+    height: 36px;
+    color: rgb(24, 23, 23);
+}
+
+.li {
+    list-style-type: none;
+}
+
+@media screen and (max-width:1024px) {
+    .navigationIcon::before {
+        top: -6.4px;
     }
-    
-    @font-face {
-        font-family: SegoeUI;
-        src: local("Segoe UI Semilight"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf) format("truetype");
-        font-weight: 200;
-    }
-    
-    @font-face {
-        font-family: SegoeUI;
-        src: local("Segoe UI"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype");
-        font-weight: 400;
-    }
-    
-    @font-face {
-        font-family: SegoeUI;
-        src: local("Segoe UI Bold"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
-        font-weight: 600;
-    }
-    
-    @font-face {
-        font-family: SegoeUI;
-        src: local("Segoe UI Semibold"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf) format("truetype");
-        font-weight: 700;
-    }
-    
-    html {
-        font-family: SegoeUI, Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    body {
-        margin: 0;
-        padding: 0;
-    }
-    
-    img {
-        height: 250px;
-        width: 250px;
-    }
-    
-    .navigationCheckbox {
-        display: none;
-    }
-    
-    .dorada {
-        color: rgb(212, 177, 101);
-    }
-    
-    .navigationBg {
-        margin-top: 20px;
-        height: 96px;
-        width: 96px;
-        border-radius: 50%;
-        position: fixed;
-        top: 72px;
-        right: 104px;
-        background-image: radial-gradient(#00cc33, #57855f);
-        z-index: 1000;
-        transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-    }
-    
-    .navigationBtn {
-        margin-top: 20px;
-        background-color: #fff;
-        height: 112px;
-        width: 112px;
-        position: fixed;
-        top: 64px;
-        right: 96px;
-        border-radius: 50%;
-        z-index: 2000;
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        cursor: pointer;
-    }
-    /* trait du milieu */
-    
-    .navigationIcon {
-        position: relative;
-        margin-top: 56px;
-        width: 48px;
-        height: 2px;
-        background: #5f5785;
-        display: inline-block;
+    .navigationIcon::after {
+        top: 6.4px;
     }
     /* deux autres traits */
-    
     .navigationIcon::before,
     .navigationIcon::after {
-        width: 48px;
-        height: 2px;
-        background-color: #5f5785;
-        content: '';
-        position: absolute;
-        left: 0;
-        transition: all 0.2s;
+        width: 24px;
+        height: 1px;
     }
-    
-    .navigationIcon::before {
-        top: -12.8px;
-    }
-    
-    .navigationIcon::after {
-        top: 12.8px;
-    }
-    /* navigation et liste */
-    
-    .nav {
-        height: 100vh;
-        position: fixed;
-        width: 0;
-        opacity: 0;
-        z-index: 1500;
-        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-    
-    .navigationListe {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        list-style-type: none;
-        text-align: center;
-        width: 100%;
-    }
-    
-    .liens {
-        display: inline-block;
-        margin-top: 16px;
-        font-size: 48px;
-        font-weight: 300;
-        color: #fff;
-        text-decoration: none;
-    }
-    
-    .liens:hover {
-        text-decoration: underline;
-        text-decoration-color: white;
-    }
-    
-    .ours {
-        color: white;
-    }
-    /* les animations */
-    
-    .navigationCheckbox:checked~.navigationBg {
-        transform: scale(80);
-    }
-    
-    .navigationCheckbox:checked~.nav {
-        opacity: 1;
-        width: 100%;
-    }
-    
-    .navigationCheckbox:checked+.navigationBtn .navigationIcon {
-        background-color: transparent;
-    }
-    
-    .navigationCheckbox:checked+.navigationBtn .navigationIcon::before {
-        top: 0;
-        transform: rotate(135deg);
-    }
-    
-    .navigationCheckbox:checked+.navigationBtn .navigationIcon::after {
-        top: 0;
-        transform: rotate(-135deg);
-    }
-    
-    body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-    }
-    
-    .accueil {
-        height: 100%;
-        width: 100%;
-        background-color: white background-size: cover;
-        position: relative;
-        background-attachment: fixed;
-    }
-    
     h1 {
-        position: absolute;
         top: 40%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 120px;
-        text-align: center;
-        color: rgb(24, 23, 23);
-        width: 100%;
+        font-size: 60px;
     }
-    
     h2 {
-        position: absolute;
-        top: 60%;
+        top: 70%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 80px;
-        text-align: center;
-        color: rgb(24, 23, 23);
+        font-size: 40px;
+    }
+    img {
+        height: 125px;
+        width: 125px;
+    }
+    .navigationBtn {
+        width: 60px;
+        height: 60px;
+        top: 32px;
+        right: 50px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    .navigationBg {
+        height: 48px;
+        width: 48px;
+        top: 35px;
+        right: 52px;
+    }
+    .navigationIcon {
+        width: 24px;
+        height: 1px;
+        margin-top: 30px;
+    }
+    .txt {
+        font-size: 18px;
+        padding: 20px;
+    }
+    .blocTxt {
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+    }
+    .ours {
+        height: 90vh;
         width: 100%;
     }
-    
+    .padding {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width:500px) {
     .section {
-        height: 100vh;
+        height: 175vh;
         width: 100%;
         position: relative;
     }
-    
-    .s1 {
-        background-color: white;
-        background-size: cover;
-        background-attachment: fixed;
-    }
-    
     .s2 {
-        background: url("ressources/jardin-vert.jpg") no-repeat 0 0;
+        background: url("ressources/jardin-vert-mobile.jpg") no-repeat 0 0;
+        background-attachment: fixed;
         background-position: center center;
         background-size: cover;
-        background-attachment: fixed;
     }
-    
     .s3 {
-        background: url("ressources/jardin-noir1.jpg") no-repeat 0 0;
-        background-position: center center;
-        background-size: cover;
+        background: url("ressources/jardin-noir-mobile.jpg") no-repeat 0 0;
         background-attachment: fixed;
     }
-    
     .s4 {
-        background: url("ressources/jardin-blanc.jpg") no-repeat 0 0;
-        background-position: center center;
-        background-size: cover;
+        background: url("ressources/jardin-blanc-mobile.jpg") no-repeat 0 0;
         background-attachment: fixed;
     }
-    
     .s5 {
-        background: url("ressources/jardin-vert-noir.jpg") no-repeat 0 0;
-        background-position: center center;
-        background-size: cover;
+        background: url("ressources/jardin-vert-noir-mobile.jpg") no-repeat 0 0;
         background-attachment: fixed;
     }
-    
     .s6 {
-        background: url("ressources/jardin-noir-vert.jpg") no-repeat 0 0;
-        background-position: center center;
-        background-size: cover;
+        background: url("ressources/jardin-noir-vert-mobile.jpg") no-repeat 0 0;
         background-attachment: fixed;
     }
-    
-    .blocTxt {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 600px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 5px;
-    }
-    
-    .ours {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 600px;
-        background: rgba(255, 255, 255, 0.8);
-        border-style: dotted;
-        border-color: black;
-        padding: 20px;
-        color: black;
-    }
-    
-    .sousTitreTxt {
-        font-size: 45px;
-        text-align: center;
-    }
-    
-    .txt {
-        font-size: 18px;
-        padding: 10px 40px;
-    }
-    
-    .iconify {
-        width: 36px;
-        height: 36px;
-        color: rgb(24, 23, 23);
-    }
-    
-    .li {
-        list-style-type: none;
-    }
-    
-    @media screen and (max-width:1024px) {
-        .navigationIcon::before {
-            top: -6.4px;
-        }
-        .navigationIcon::after {
-            top: 6.4px;
-        }
-        /* deux autres traits */
-        .navigationIcon::before,
-        .navigationIcon::after {
-            width: 24px;
-            height: 1px;
-        }
-        h1 {
-            top: 40%;
-            left: 50%;
-            font-size: 60px;
-        }
-        h2 {
-            top: 70%;
-            left: 50%;
-            font-size: 40px;
-        }
-        img {
-            height: 125px;
-            width: 125px;
-        }
-        .navigationBtn {
-            width: 60px;
-            height: 60px;
-            top: 32px;
-            right: 50px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
-        .navigationBg {
-            height: 48px;
-            width: 48px;
-            top: 35px;
-            right: 52px;
-        }
-        .navigationIcon {
-            width: 24px;
-            height: 1px;
-            margin-top: 30px;
-        }
-        .txt {
-            font-size: 18px;
-            padding: 20px;
-        }
-        .blocTxt {
-            width: 100%;
-            margin: 10px;
-            padding: 10px;
-        }
-        .ours {
-            height: 90vh;
-            width: 100%;
-        }
-        .padding {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-    }
-    
-    @media screen and (max-width:500px) {
-        .section {
-            height: 175vh;
-        }
-        .s2 {
-            background: url("ressources/jardin-vert-mobile.jpg") no-repeat 0 0;
-            background-attachment: fixed;
-            background-position: center center;
-        }
-        .s3 {
-            background: url("ressources/jardin-noir-mobile.jpg") no-repeat 0 0;
-            background-attachment: fixed;
-        }
-        .s4 {
-            background: url("ressources/jardin-blanc-mobile.jpg") no-repeat 0 0;
-            background-attachment: fixed;
-        }
-        .s5 {
-            background: url("ressources/jardin-vert-noir-mobile.jpg") no-repeat 0 0;
-            background-attachment: fixed;
-        }
-        .s6 {
-            background: url("ressources/jardin-noir-vert-mobile.jpg") no-repeat 0 0;
-            background-attachment: fixed;
-        }
-    }
+}
