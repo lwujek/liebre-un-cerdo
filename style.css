@@ -380,26 +380,26 @@ h2 {
     .s2 {
         background: url("ressources/jardin-vert-mobile.jpg") no-repeat 0 0;
         background-attachment: fixed;
-        background-position: top center;
+        background-position: bottom center;
     }
     .s3 {
         background: url("ressources/jardin-noir-mobile.jpg") no-repeat 0 0;
         background-attachment: fixed;
-        background-position: top center;
+        background-position: bottom center;
     }
     .s4 {
         background: url("ressources/jardin-blanc-mobile.jpg") no-repeat 0 0;
         background-attachment: fixed;
-        background-position: top center;
+        background-position: bottom center;
     }
     .s5 {
         background: url("ressources/jardin-vert-noir-mobile.jpg") no-repeat 0 0;
         background-attachment: fixed;
-        background-position: top center;
+        background-position: bottom center;
     }
     .s6 {
         background: url("ressources/jardin-noir-vert-mobile.jpg") no-repeat 0 0;
         background-attachment: fixed;
-        background-position: top center;
+        background-position: bottom center;
     }
 }
