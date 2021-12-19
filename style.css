@@ -1,357 +1,357 @@
-                                                    @font-face {
-                                                    font-family: 'Segoe UI Regular';
-                                                    font-style: normal;
-                                                    font-weight: normal;
-                                                    src: local('Segoe UI Regular'), url('Segoe UI.woff') format('woff');
-                                                }
-                                                
-                                                @font-face {
-                                                    font-family: 'Segoe UI Italic';
-                                                    font-style: normal;
-                                                    font-weight: normal;
-                                                    src: local('Segoe UI Italic'), url('Segoe UI Italic.woff') format('woff');
-                                                }
-                                                
-                                                @font-face {
-                                                    font-family: 'Segoe UI Bold';
-                                                    font-style: normal;
-                                                    font-weight: normal;
-                                                    src: local('Segoe UI Bold'), url('Segoe UI Bold.woff') format('woff');
-                                                }
-                                                
-                                                @font-face {
-                                                    font-family: 'Segoe UI Bold Italic';
-                                                    font-style: normal;
-                                                    font-weight: normal;
-                                                    src: local('Segoe UI Bold Italic'), url('Segoe UI Bold Italic.woff') format('woff');
-                                                }
-                                                
-                                                html {
-                                                    font-family: Segoe UI Regular, Tahoma, Geneva, Verdana, sans-serif;
-                                                }
-                                                
-                                                body {
-                                                    margin: 0;
-                                                    padding: 0;
-                                                    height: 100vh;
-                                                }
-                                                
-                                                h1 {
-                                                    position: absolute;
-                                                    top: 40%;
-                                                    left: 50%;
-                                                    font-size: 120px;
-                                                    text-align: center;
-                                                    color: rgb(24, 23, 23);
-                                                    width: 100%;
-                                                    text-transform: uppercase;
-                                                }
-                                                
-                                                h2 {
-                                                    position: absolute;
-                                                    top: 65%;
-                                                    left: 50%;
-                                                    font-size: 80px;
-                                                    text-align: center;
-                                                    color: rgb(24, 23, 23);
-                                                    width: 100%;
-                                                }
-                                                
-                                                ul {
-                                                    list-style-type: none;
-                                                    padding: 0;
-                                                }
-                                                
-                                                a {
-                                                    text-decoration: none;
-                                                    color: #ff8800;
-                                                }
-                                                
-                                                img {
-                                                    width: 100%;
-                                                    height: 100vh;
-                                                    object-fit: cover;
-                                                    width: 100%;
-                                                    padding: 0;
-                                                    opacity: 0.3;
-                                                    visibility: hidden;
-                                                }
-                                                
-                                                .title {
-                                                    opacity: 0;
-                                                    visibility: hidden;
-                                                    transform: translate(-50%, -30%);
-                                                    ;
-                                                }
-                                                
-                                                .paragraphe {
-                                                    margin-top: 50px;
-                                                }
-                                                /* Navigation*/
-                                                
-                                                .navigationCheckbox {
-                                                    display: none;
-                                                }
-                                                
-                                                .dorada {
-                                                    color: rgb(212, 177, 101);
-                                                    opacity: 0;
-                                                    visibility: hidden;
-                                                }
-                                                
-                                                .logo {
-                                                    height: 250px;
-                                                    width: 250px;
-                                                    opacity: 0;
-                                                    visibility: hidden;
-                                                }
-                                                
-                                                .navigationBg {
-                                                    margin-top: 20px;
-                                                    height: 96px;
-                                                    width: 96px;
-                                                    border-radius: 50%;
-                                                    position: fixed;
-                                                    top: 72px;
-                                                    right: 104px;
-                                                    background-image: radial-gradient(#ff8800, #857157);
-                                                    z-index: 1000;
-                                                    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-                                                    opacity: 0;
-                                                    visibility: hidden;
-                                                }
-                                                
-                                                .navigationBtn {
-                                                    margin-top: 20px;
-                                                    background-color: #fff;
-                                                    height: 112px;
-                                                    width: 112px;
-                                                    position: fixed;
-                                                    top: 64px;
-                                                    right: 96px;
-                                                    border-radius: 50%;
-                                                    z-index: 2000;
-                                                    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-                                                    text-align: center;
-                                                    cursor: pointer;
-                                                    opacity: 0;
-                                                    visibility: hidden;
-                                                }
-                                                /* trait du milieu */
-                                                
-                                                .navigationIcon {
-                                                    position: relative;
-                                                    margin-top: 56px;
-                                                    width: 48px;
-                                                    height: 2px;
-                                                    background: #5f5785;
-                                                    display: inline-block;
-                                                }
-                                                /* deux autres traits */
-                                                
-                                                .navigationIcon::before,
-                                                .navigationIcon::after {
-                                                    width: 48px;
-                                                    height: 2px;
-                                                    background-color: #5f5785;
-                                                    content: '';
-                                                    position: absolute;
-                                                    left: 0;
-                                                    transition: all 0.2s;
-                                                }
-                                                
-                                                .navigationIcon::before {
-                                                    top: -12.8px;
-                                                }
-                                                
-                                                .navigationIcon::after {
-                                                    top: 12.8px;
-                                                }
-                                                /* navigation et liste */
-                                                
-                                                .nav {
-                                                    height: 100vh;
-                                                    position: fixed;
-                                                    width: 0;
-                                                    opacity: 0;
-                                                    z-index: 1500;
-                                                    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-                                                }
-                                                
-                                                .navigationListe {
-                                                    position: absolute;
-                                                    top: 50%;
-                                                    left: 50%;
-                                                    transform: translate(-50%, -50%);
-                                                    list-style-type: none;
-                                                    text-align: center;
-                                                    width: 100%;
-                                                }
-                                                
-                                                .liens {
-                                                    display: inline-block;
-                                                    margin-top: 16px;
-                                                    font-size: 48px;
-                                                    color: #fff;
-                                                    text-decoration: none;
-                                                }
-                                                
-                                                .liens:hover {
-                                                    text-decoration: underline;
-                                                    text-decoration-color: white;
-                                                }
-                                                /* les animations */
-                                                
-                                                .navigationCheckbox:checked~.navigationBg {
-                                                    transform: scale(80);
-                                                }
-                                                
-                                                .navigationCheckbox:checked~.nav {
-                                                    opacity: 1;
-                                                    width: 100%;
-                                                }
-                                                
-                                                .navigationCheckbox:checked+.navigationBtn .navigationIcon {
-                                                    background-color: transparent;
-                                                }
-                                                
-                                                .navigationCheckbox:checked+.navigationBtn .navigationIcon::before {
-                                                    top: 0;
-                                                    transform: rotate(135deg);
-                                                }
-                                                
-                                                .navigationCheckbox:checked+.navigationBtn .navigationIcon::after {
-                                                    top: 0;
-                                                    transform: rotate(-135deg);
-                                                }
-                                                
-                                                .cover {
-                                                    height: 100%;
-                                                    width: 100%;
-                                                    background-color: white background-size: cover;
-                                                    position: relative;
-                                                }
-                                                
-                                                .section {
-                                                    padding-left: 30%;
-                                                    padding-right: 30%;
-                                                    padding-bottom: 10%;
-                                                }
-                                                
-                                                img {
-                                                    object-fit: cover;
-                                                    width: 100%;
-                                                    padding: 0;
-                                                    opacity: 0.3;
-                                                    visibility: hidden;
-                                                }
-                                                
-                                                .footer {
-                                                    margin-top: 50px;
-                                                }
-                                                
-                                                .ours {
-                                                    position: absolute;
-                                                    top: 50%;
-                                                    left: 50%;
-                                                    transform: translate(-50%, -50%);
-                                                    width: 600px;
-                                                    background: rgba(255, 255, 255, 0.8);
-                                                    border-style: dotted;
-                                                    border-color: black;
-                                                    color: black;
-                                                }
-                                                
-                                                .sousTitreTxt {
-                                                    font-size: 45px;
-                                                    text-align: center;
-                                                }
-                                                
-                                                p {
-                                                    font-size: 18px;
-                                                }
-                                                
-                                                .iconify {
-                                                    width: 36px;
-                                                    height: 36px;
-                                                    color: rgb(24, 23, 23);
-                                                }
-                                                
-                                                .li {
-                                                    list-style-type: none;
-                                                }
-                                                
-                                                .padding {
-                                                    padding-left: 20px;
-                                                    padding-right: 20px;
-                                                }
-                                                
-                                                @media screen and (max-width:1201px) {
-                                                    h1 {
-                                                        font-size: 100px;
-                                                    }
-                                                    @media screen and (max-width:1024px) {
-                                                        .navigationIcon::before {
-                                                            top: -6.4px;
-                                                        }
-                                                        .navigationIcon::after {
-                                                            top: 6.4px;
-                                                        }
-                                                        /* deux autres traits */
-                                                        .navigationIcon::before,
-                                                        .navigationIcon::after {
-                                                            width: 24px;
-                                                            height: 1px;
-                                                        }
-                                                        h1 {
-                                                            top: 40%;
-                                                            left: 50%;
-                                                            font-size: 48px;
-                                                        }
-                                                        h2 {
-                                                            top: 70%;
-                                                            left: 50%;
-                                                            font-size: 40px;
-                                                        }
-                                                        p {
-                                                            font-size: 16px;
-                                                        }
-                                                        .logo {
-                                                            height: 125px;
-                                                            width: 125px;
-                                                            opacity: 0;
-                                                            visibility: hidden;
-                                                        }
-                                                        .navigationBtn {
-                                                            width: 60px;
-                                                            height: 60px;
-                                                            top: 32px;
-                                                            right: 50px;
-                                                            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-                                                        }
-                                                        .navigationBg {
-                                                            height: 48px;
-                                                            width: 48px;
-                                                            top: 35px;
-                                                            right: 52px;
-                                                        }
-                                                        .navigationIcon {
-                                                            width: 24px;
-                                                            height: 1px;
-                                                            margin-top: 30px;
-                                                        }
-                                                        .ours {
-                                                            width: 90%;
-                                                            font-size: 12px;
-                                                        }
-                                                        .section {
-                                                            padding-left: 5%;
-                                                            padding-right: 5%;
-                                                            padding-bottom: 10%;
-                                                        }
-                                                    }
-                                                    @media screen and (max-width:500px) {
-                                                        .liens {
-                                                            font-size: 24px;
-                                                        }
-                                                    }
+            @font-face {
+            font-family: 'Segoe UI Regular';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Segoe UI Regular'), url('Segoe UI.woff') format('woff');
+        }
+        
+        @font-face {
+            font-family: 'Segoe UI Italic';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Segoe UI Italic'), url('Segoe UI Italic.woff') format('woff');
+        }
+        
+        @font-face {
+            font-family: 'Segoe UI Bold';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Segoe UI Bold'), url('Segoe UI Bold.woff') format('woff');
+        }
+        
+        @font-face {
+            font-family: 'Segoe UI Bold Italic';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Segoe UI Bold Italic'), url('Segoe UI Bold Italic.woff') format('woff');
+        }
+        
+        html {
+            font-family: Segoe UI Regular, Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        
+        h1 {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            font-size: 120px;
+            text-align: center;
+            color: rgb(24, 23, 23);
+            width: 100%;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            font-size: 80px;
+            text-align: center;
+            color: rgb(24, 23, 23);
+            width: 100%;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #ff8800;
+        }
+        
+        img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            width: 100%;
+            padding: 0;
+            opacity: 0.3;
+            visibility: hidden;
+        }
+        
+        .title {
+            opacity: 0;
+            visibility: hidden;
+            transform: translate(-50%, -30%);
+            ;
+        }
+        
+        .paragraphe {
+            margin-top: 50px;
+        }
+        /* Navigation*/
+        
+        .navigationCheckbox {
+            display: none;
+        }
+        
+        .dorada {
+            color: rgb(212, 177, 101);
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .logo {
+            height: 250px;
+            width: 250px;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .navigationBg {
+            margin-top: 20px;
+            height: 96px;
+            width: 96px;
+            border-radius: 50%;
+            position: fixed;
+            top: 72px;
+            right: 104px;
+            background-image: radial-gradient(#ff8800, #857157);
+            z-index: 1000;
+            transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .navigationBtn {
+            margin-top: 20px;
+            background-color: #fff;
+            height: 112px;
+            width: 112px;
+            position: fixed;
+            top: 64px;
+            right: 96px;
+            border-radius: 50%;
+            z-index: 2000;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+        }
+        /* trait du milieu */
+        
+        .navigationIcon {
+            position: relative;
+            margin-top: 56px;
+            width: 48px;
+            height: 2px;
+            background: #5f5785;
+            display: inline-block;
+        }
+        /* deux autres traits */
+        
+        .navigationIcon::before,
+        .navigationIcon::after {
+            width: 48px;
+            height: 2px;
+            background-color: #5f5785;
+            content: '';
+            position: absolute;
+            left: 0;
+            transition: all 0.2s;
+        }
+        
+        .navigationIcon::before {
+            top: -12.8px;
+        }
+        
+        .navigationIcon::after {
+            top: 12.8px;
+        }
+        /* navigation et liste */
+        
+        .nav {
+            height: 100vh;
+            position: fixed;
+            width: 0;
+            opacity: 0;
+            z-index: 1500;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .navigationListe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            list-style-type: none;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .liens {
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 48px;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .liens:hover {
+            text-decoration: underline;
+            text-decoration-color: white;
+        }
+        /* les animations */
+        
+        .navigationCheckbox:checked~.navigationBg {
+            transform: scale(80);
+        }
+        
+        .navigationCheckbox:checked~.nav {
+            opacity: 1;
+            width: 100%;
+        }
+        
+        .navigationCheckbox:checked+.navigationBtn .navigationIcon {
+            background-color: transparent;
+        }
+        
+        .navigationCheckbox:checked+.navigationBtn .navigationIcon::before {
+            top: 0;
+            transform: rotate(135deg);
+        }
+        
+        .navigationCheckbox:checked+.navigationBtn .navigationIcon::after {
+            top: 0;
+            transform: rotate(-135deg);
+        }
+        
+        .cover {
+            height: 100%;
+            width: 100%;
+            background-color: white background-size: cover;
+            position: relative;
+        }
+        
+        .section {
+            padding-left: 30%;
+            padding-right: 30%;
+            padding-bottom: 10%;
+        }
+        
+        img {
+            object-fit: cover;
+            width: 100%;
+            padding: 0;
+            opacity: 0.3;
+            visibility: hidden;
+        }
+        
+        .footer {
+            margin-top: 50px;
+        }
+        
+        .ours {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            background: rgba(255, 255, 255, 0.8);
+            border-style: dotted;
+            border-color: black;
+            color: black;
+        }
+        
+        .sousTitreTxt {
+            font-size: 45px;
+            text-align: center;
+        }
+        
+        p {
+            font-size: 18px;
+        }
+        
+        .iconify {
+            width: 36px;
+            height: 36px;
+            color: rgb(24, 23, 23);
+        }
+        
+        .li {
+            list-style-type: none;
+        }
+        
+        .padding {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        @media screen and (max-width:1201px) {
+            h1 {
+                font-size: 100px;
+            }
+            @media screen and (max-width:1024px) {
+                .navigationIcon::before {
+                    top: -6.4px;
+                }
+                .navigationIcon::after {
+                    top: 6.4px;
+                }
+                /* deux autres traits */
+                .navigationIcon::before,
+                .navigationIcon::after {
+                    width: 24px;
+                    height: 1px;
+                }
+                h1 {
+                    top: 40%;
+                    left: 50%;
+                    font-size: 48px;
+                }
+                h2 {
+                    top: 70%;
+                    left: 50%;
+                    font-size: 40px;
+                }
+                p {
+                    font-size: 16px;
+                }
+                .logo {
+                    height: 125px;
+                    width: 125px;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                .navigationBtn {
+                    width: 60px;
+                    height: 60px;
+                    top: 32px;
+                    right: 50px;
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+                }
+                .navigationBg {
+                    height: 48px;
+                    width: 48px;
+                    top: 35px;
+                    right: 52px;
+                }
+                .navigationIcon {
+                    width: 24px;
+                    height: 1px;
+                    margin-top: 30px;
+                }
+                .ours {
+                    width: 90%;
+                    font-size: 12px;
+                }
+                .section {
+                    padding-left: 5%;
+                    padding-right: 5%;
+                    padding-bottom: 10%;
+                }
+            }
+            @media screen and (max-width:500px) {
+                .liens {
+                    font-size: 24px;
+                }
+            }
