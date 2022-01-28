@@ -5,6 +5,7 @@ const logo = document.querySelectorAll('.logo');
 const title = document.querySelectorAll('.title');
 const letter = document.querySelectorAll('.dorada');
 
+
 window.addEventListener('load', initAnim);
 
 function initAnim() {
@@ -21,20 +22,89 @@ function initAnim() {
             y: -50
         })
         .to(letter, { autoAlpha: 1, delay: 0.2 })
+        .to('.number1 .circle-btn .filled', {
+            strokeDashoffset: 0,
+            scrollTrigger: {
+                trigger: '.number1 .circle-btn .filled ',
+                markers: true,
+                start: 'top 50%',
+                end: 'bottom 40%',
+                toggleActions: 'play pause reverse reset',
+            },
+        })
+        .to('.number2 .circle-btn .filled', {
+            strokeDashoffset: 0,
+            scrollTrigger: {
+                trigger: '.number2 .circle-btn .filled ',
+                markers: true,
+                start: 'top 50%',
+                end: 'bottom 40%',
+                toggleActions: 'play pause reverse reset',
+            },
+        })
+        .to('.number3 .circle-btn .filled', {
+            strokeDashoffset: 0,
+            scrollTrigger: {
+                trigger: '.number3 .circle-btn .filled ',
+                markers: true,
+                start: 'top 50%',
+                end: 'bottom 40%',
+                toggleActions: 'play pause reverse reset',
+            },
+        })
+        .to('.number4 .circle-btn .filled', {
+            strokeDashoffset: 0,
+            scrollTrigger: {
+                trigger: '.number4 .circle-btn .filled ',
+                markers: true,
+                start: 'top 50%',
+                end: 'bottom 40%',
+                toggleActions: 'play pause reverse reset',
+            },
+        })
+        .to('.number5 .circle-btn .filled', {
+            strokeDashoffset: 0,
+            scrollTrigger: {
+                trigger: '.number5 .circle-btn .filled ',
+                markers: true,
+                start: 'top 50%',
+                end: 'bottom 40%',
+                toggleActions: 'play pause reverse reset',
+            },
+        })
+        .to('.number6 .circle-btn .filled', {
+            strokeDashoffset: 0,
+            scrollTrigger: {
+                trigger: '.number6 .circle-btn .filled ',
+                markers: true,
+                start: 'top 50%',
+                end: 'bottom 40%',
+                toggleActions: 'play pause reverse reset',
+            },
+        })
+        .to('.number7 .circle-btn .filled', {
+            strokeDashoffset: 0,
+            scrollTrigger: {
+                trigger: '.number7 .circle-btn .filled ',
+                markers: true,
+                start: 'top 50%',
+                end: 'bottom 40%',
+                toggleActions: 'play pause reverse reset',
+            },
+        })
         .to('.img1 img', {
             autoAlpha: 1,
             scrollTrigger: {
                 trigger: '.img1 img ',
-                scrub: true,
-                pin: true,
+                scrub: true
             },
         })
-        .to('.img2 img', {
+
+    .to('.img2 img', {
             autoAlpha: 1,
             scrollTrigger: {
                 trigger: '.img2 img ',
-                scrub: true,
-                pin: true,
+                scrub: true
 
             },
         })
@@ -42,8 +112,15 @@ function initAnim() {
             autoAlpha: 1,
             scrollTrigger: {
                 trigger: '.img3 img ',
-                scrub: true,
-                pin: true,
+                scrub: true
+
+            },
+        })
+        .to('.img4 img', {
+            autoAlpha: 1,
+            scrollTrigger: {
+                trigger: '.img4 img ',
+                scrub: true
 
             },
         });
