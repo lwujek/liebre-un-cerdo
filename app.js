@@ -85,38 +85,6 @@ function initAnim() {
                 toggleActions: 'play pause reverse reset',
             },
         })
-        .to('.img1 img', {
-            autoAlpha: 1,
-            scrollTrigger: {
-                trigger: '.img1 img ',
-                scrub: true
-            },
-        })
-
-    .to('.img2 img', {
-            autoAlpha: 1,
-            scrollTrigger: {
-                trigger: '.img2 img ',
-                scrub: true
-
-            },
-        })
-        .to('.img3 img', {
-            autoAlpha: 1,
-            scrollTrigger: {
-                trigger: '.img3 img ',
-                scrub: true
-
-            },
-        })
-        .to('.img4 img', {
-            autoAlpha: 1,
-            scrollTrigger: {
-                trigger: '.img4 img ',
-                scrub: true
-
-            },
-        });
 
 
 }
