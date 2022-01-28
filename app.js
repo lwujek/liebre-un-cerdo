@@ -26,7 +26,6 @@ function initAnim() {
             strokeDashoffset: 0,
             scrollTrigger: {
                 trigger: '.number1 .circle-btn .filled ',
-                markers: true,
                 start: 'top 50%',
                 end: 'bottom 40%',
                 toggleActions: 'play pause reverse reset',
@@ -36,7 +35,6 @@ function initAnim() {
             strokeDashoffset: 0,
             scrollTrigger: {
                 trigger: '.number2 .circle-btn .filled ',
-                markers: true,
                 start: 'top 50%',
                 end: 'bottom 40%',
                 toggleActions: 'play pause reverse reset',
@@ -46,7 +44,6 @@ function initAnim() {
             strokeDashoffset: 0,
             scrollTrigger: {
                 trigger: '.number3 .circle-btn .filled ',
-                markers: true,
                 start: 'top 50%',
                 end: 'bottom 40%',
                 toggleActions: 'play pause reverse reset',
@@ -56,7 +53,6 @@ function initAnim() {
             strokeDashoffset: 0,
             scrollTrigger: {
                 trigger: '.number4 .circle-btn .filled ',
-                markers: true,
                 start: 'top 50%',
                 end: 'bottom 40%',
                 toggleActions: 'play pause reverse reset',
@@ -66,7 +62,6 @@ function initAnim() {
             strokeDashoffset: 0,
             scrollTrigger: {
                 trigger: '.number5 .circle-btn .filled ',
-                markers: true,
                 start: 'top 50%',
                 end: 'bottom 40%',
                 toggleActions: 'play pause reverse reset',
@@ -76,7 +71,6 @@ function initAnim() {
             strokeDashoffset: 0,
             scrollTrigger: {
                 trigger: '.number6 .circle-btn .filled ',
-                markers: true,
                 start: 'top 50%',
                 end: 'bottom 40%',
                 toggleActions: 'play pause reverse reset',
@@ -86,7 +80,6 @@ function initAnim() {
             strokeDashoffset: 0,
             scrollTrigger: {
                 trigger: '.number7 .circle-btn .filled ',
-                markers: true,
                 start: 'top 50%',
                 end: 'bottom 40%',
                 toggleActions: 'play pause reverse reset',
