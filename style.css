@@ -313,6 +313,13 @@ p {
     width: 36px;
     height: 36px;
     color: rgb(24, 23, 23);
+    position: relative;
+}
+
+.rs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .li {
